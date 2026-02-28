@@ -1,10 +1,8 @@
-extends Node2D
+extends CanvasLayer
 
-@onready var player = $Player
-@onready var oxygen_bar = $CanvasLayer/OxygenBar
+@onready var player = get_parent().get_node("player")
+@onready var oxygen_bar = $oxygenbar
 
 func _process(delta):
-	oxygen_bar.value = player.oxygen
-
-
-# Called when the node enters the scene tree for the first time.
+	if player:
+		oxygen_bar.value = player.oxygen

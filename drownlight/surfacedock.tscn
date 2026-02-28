@@ -1,26 +1,32 @@
-[gd_scene format=3 uid="uid://w8pjjx6j0p85"]
+[gd_scene format=3 uid="uid://dmjw3qkl3xrru"]
 
 [ext_resource type="Script" uid="uid://bhuwjvir81edw" path="res://surfacedock.gd" id="1_a6e6g"]
 [ext_resource type="Texture2D" uid="uid://eygduoljhybs" path="res://dock_bg.png" id="1_wuwgn"]
 [ext_resource type="Texture2D" uid="uid://chr1y7lwka8yu" path="res://pirate.png" id="2_a6e6g"]
 [ext_resource type="Script" uid="uid://bxk0q0v7wnau2" path="res://player.gd" id="3_e35x2"]
+[ext_resource type="Texture2D" uid="uid://buiro0q8wee4u" path="res://swimming.png" id="6_pmtsi"]
+
+[sub_resource type="GDScript" id="GDScript_hh3l3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e35x2"]
 
 [node name="surfacedock" type="Node2D" unique_id=1886651130]
 script = ExtResource("1_a6e6g")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1193702024]
+[node name="wood" type="Sprite2D" parent="." unique_id=1193702024]
 position = Vector2(588, 329)
 texture = ExtResource("1_wuwgn")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1631786408]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=903100683]
 script = ExtResource("3_e35x2")
+dock_texture = ExtResource("2_a6e6g")
+dive_texture = ExtResource("6_pmtsi")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=584562462]
-position = Vector2(437, 423)
+position = Vector2(406, 378.00003)
 scale = Vector2(1.393, 1.2795)
 texture = ExtResource("2_a6e6g")
+script = SubResource("GDScript_hh3l3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1231659177]
 shape = SubResource("RectangleShape2D_e35x2")

@@ -1,24 +1,34 @@
-[gd_scene format=3 uid="uid://coaov8o8vwvk1"]
+[gd_scene format=3 uid="uid://bh383snh6u64l"]
 
 [ext_resource type="Script" uid="uid://caxeprcm1tkd7" path="res://reef.gd" id="1_ph0f1"]
-[ext_resource type="Texture2D" uid="uid://chr1y7lwka8yu" path="res://pirate.png" id="2_62aj3"]
+[ext_resource type="Texture2D" uid="uid://j3ywindylyy8" path="res://reef.png" id="2_62aj3"]
+[ext_resource type="Texture2D" uid="uid://buiro0q8wee4u" path="res://swimming.png" id="3_dm17u"]
 [ext_resource type="Script" uid="uid://dfbnb6nou3nde" path="res://canvas_layer.gd" id="3_k4f1h"]
+[ext_resource type="Script" uid="uid://bxk0q0v7wnau2" path="res://player.gd" id="3_mxdcl"]
 [ext_resource type="Script" uid="uid://dy1ol5khtdda7" path="res://task_object.gd" id="4_dm17u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdcl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lekfx"]
 
 [node name="reef" type="Node2D" unique_id=1047524276]
 script = ExtResource("1_ph0f1")
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=1795128770]
+script = ExtResource("3_mxdcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1119176396]
-position = Vector2(205, 530)
-scale = Vector2(2.0700002, 2.158)
-texture = ExtResource("2_62aj3")
+position = Vector2(294, 715.00006)
+scale = Vector2(2.1085002, 1.7965002)
+texture = ExtResource("3_dm17u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=115669558]
 shape = SubResource("RectangleShape2D_mxdcl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=129923289]
+position = Vector2(837, 370.5)
+scale = Vector2(1.4496528, 1.125)
+texture = ExtResource("2_62aj3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1014914976]
 script = ExtResource("3_k4f1h")
@@ -27,16 +37,20 @@ script = ExtResource("3_k4f1h")
 custom_minimum_size = Vector2(0, 40)
 anchors_preset = 10
 anchor_right = 1.0
-offset_right = 494.0
-offset_bottom = 80.0
+offset_left = 12.0
+offset_top = 24.0
+offset_right = 14.0
+offset_bottom = 108.0
 grow_horizontal = 2
 step = 5.0
 value = 100.0
+fill_mode = 1
 
 [node name="TaskObject" type="Area2D" parent="." unique_id=1084452713]
 position = Vector2(4, 0)
 script = ExtResource("4_dm17u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TaskObject" unique_id=740281939]
+shape = SubResource("RectangleShape2D_lekfx")
 
 [node name="Sprite2D" type="Sprite2D" parent="TaskObject" unique_id=1825071594]
