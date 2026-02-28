@@ -1,3 +1,41 @@
 [gd_scene format=3 uid="uid://bh383snh6u64l"]
 
-[node name="Node2D" type="Node2D" unique_id=1047524276]
+[ext_resource type="Script" uid="uid://caxeprcm1tkd7" path="res://reef.gd" id="1_ph0f1"]
+[ext_resource type="Texture2D" uid="uid://chr1y7lwka8yu" path="res://pirate.png" id="2_62aj3"]
+[ext_resource type="Script" uid="uid://dfbnb6nou3nde" path="res://canvas_layer.gd" id="3_k4f1h"]
+[ext_resource type="Script" uid="uid://dy1ol5khtdda7" path="res://task_object.gd" id="4_dm17u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdcl"]
+
+[node name="reef" type="Node2D" unique_id=1047524276]
+script = ExtResource("1_ph0f1")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1795128770]
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1119176396]
+position = Vector2(205, 530)
+scale = Vector2(2.0700002, 2.158)
+texture = ExtResource("2_62aj3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=115669558]
+shape = SubResource("RectangleShape2D_mxdcl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1014914976]
+script = ExtResource("3_k4f1h")
+
+[node name="oxygenbar" type="ProgressBar" parent="CanvasLayer" unique_id=139737933]
+custom_minimum_size = Vector2(0, 40)
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 494.0
+offset_bottom = 80.0
+grow_horizontal = 2
+step = 5.0
+value = 100.0
+
+[node name="TaskObject" type="Area2D" parent="." unique_id=1084452713]
+script = ExtResource("4_dm17u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TaskObject" unique_id=740281939]
+
+[node name="Sprite2D" type="Sprite2D" parent="TaskObject" unique_id=1825071594]
