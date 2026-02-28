@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bh383snh6u64l"]
+[gd_scene format=3 uid="uid://coaov8o8vwvk1"]
 
 [ext_resource type="Script" uid="uid://caxeprcm1tkd7" path="res://reef.gd" id="1_ph0f1"]
 [ext_resource type="Texture2D" uid="uid://chr1y7lwka8yu" path="res://pirate.png" id="2_62aj3"]
@@ -34,6 +34,7 @@ step = 5.0
 value = 100.0
 
 [node name="TaskObject" type="Area2D" parent="." unique_id=1084452713]
+position = Vector2(4, 0)
 script = ExtResource("4_dm17u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TaskObject" unique_id=740281939]
