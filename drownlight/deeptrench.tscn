@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://b4t40use5twb2"]
+[gd_scene format=3 uid="uid://csl7dojaf7kmp"]
 
-[ext_resource type="Script" uid="uid://ccwkp7nnswua2" path="res://deeptrench.gd" id="1_12xhh"]
+[ext_resource type="Script" path="res://deeptrench.gd" id="1_12xhh"]
 [ext_resource type="Texture2D" uid="uid://dctdns0mx6t2l" path="res://deeptrench.png" id="1_rv1f8"]
 [ext_resource type="Script" uid="uid://dbedmkrw8a8ek" path="res://kraken.gd" id="2_eyd2c"]
 [ext_resource type="Script" uid="uid://bxk0q0v7wnau2" path="res://player.gd" id="3_kvt5l"]
@@ -12,6 +12,7 @@
 size = Vector2(228, 116)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12xhh"]
+size = Vector2(182, 20)
 
 [node name="deeptrench" type="Node2D" unique_id=1732461315]
 script = ExtResource("1_12xhh")
@@ -47,9 +48,11 @@ shape = SubResource("RectangleShape2D_kvt5l")
 [node name="DeathDetector" type="Area2D" parent="player" unique_id=1488921898]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/DeathDetector" unique_id=819898109]
+position = Vector2(76, -11)
 shape = SubResource("RectangleShape2D_12xhh")
 
 [node name="tentacles" type="Node2D" parent="." unique_id=1191465121 groups=["tentacle"]]
+position = Vector2(1, -11)
 
 [node name="relic" type="Sprite2D" parent="." unique_id=537366406]
 
@@ -62,8 +65,10 @@ autostart = true
 script = ExtResource("7_q1yhv")
 
 [node name="oxygenbar" type="ProgressBar" parent="CanvasLayer" unique_id=1533413503]
-offset_right = 4.0
-offset_bottom = 27.0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 1163.0
+offset_bottom = 51.0
 
 [connection signal="timeout" from="kraken/AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="body_entered" from="player/DeathDetector" to="." method="_on_death_detector_body_entered"]

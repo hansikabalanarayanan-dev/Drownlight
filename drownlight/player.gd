@@ -7,7 +7,7 @@ var dead = false
 
 signal health_changed(new_health, max_health)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if dead:
 		return
 	var dir = Vector2(
