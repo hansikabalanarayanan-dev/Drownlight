@@ -6,13 +6,10 @@
 [ext_resource type="Script" uid="uid://dfbnb6nou3nde" path="res://canvas_layer.gd" id="3_k4f1h"]
 <<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://dasmnn55oqgst" path="res://player_reef.gd" id="3_mxdcl"]
-[ext_resource type="Script" uid="uid://detp60tqc5lqn" path="res://crab_2.gd" id="4_5bie0"]
 [ext_resource type="Script" uid="uid://dy1ol5khtdda7" path="res://task_object.gd" id="4_dm17u"]
-[ext_resource type="Script" uid="uid://bxnlx43np2fxj" path="res://crab_3.gd" id="5_nuv42"]
-[ext_resource type="Script" uid="uid://davj33y5hvrl1" path="res://crab_4.gd" id="6_25bc8"]
-[ext_resource type="Script" uid="uid://cywo3fbx52tc8" path="res://crab_5.gd" id="7_jilma"]
 [ext_resource type="Script" uid="uid://dftqc4b81uo8" path="res://crab.gd" id="7_mxdcl"]
 [ext_resource type="Texture2D" uid="uid://bamf5d4eyljpo" path="res://crab.png" id="8_lekfx"]
+<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://bbdwel8inldi1" path="res://goal.gd" id="15_ck4d3"]
 =======
 [ext_resource type="Script" path="res://player_reef.gd" id="3_mxdcl"]
@@ -20,6 +17,9 @@
 [ext_resource type="Script" path="res://crab.gd" id="7_mxdcl"]
 [ext_resource type="Texture2D" uid="uid://bamf5d4eyljpo" path="res://Untitled20_20260228174406-removebg-preview.png" id="8_lekfx"]
 >>>>>>> Stashed changes
+=======
+[ext_resource type="Script" path="res://goal.gd" id="15_ck4d3"]
+>>>>>>> 27012638b63c8773b2598dd057a7c82a0a6fd4b0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdcl"]
 size = Vector2(324, 107.5)
@@ -47,6 +47,9 @@ size = Vector2(152, 114)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkitg"]
 size = Vector2(103.75, 638.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6t6wp"]
+size = Vector2(1480, 121)
+
 [node name="reef" type="Node2D" unique_id=1047524276]
 script = ExtResource("1_ph0f1")
 
@@ -56,7 +59,6 @@ scale = Vector2(1.289, 1)
 texture = ExtResource("2_62aj3")
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=1795128770 groups=["player"]]
-collision_mask = 0
 script = ExtResource("3_mxdcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1119176396]
@@ -68,9 +70,8 @@ texture = ExtResource("3_dm17u")
 position = Vector2(171, 407)
 shape = SubResource("RectangleShape2D_mxdcl")
 
-[node name="Crab" type="CharacterBody2D" parent="." unique_id=1811391821]
+[node name="Crab" type="StaticBody2D" parent="." unique_id=1443256300]
 z_index = 1
-collision_mask = 0
 script = ExtResource("7_mxdcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crab" unique_id=659116209]
@@ -82,9 +83,8 @@ texture = ExtResource("8_lekfx")
 position = Vector2(791, 403)
 shape = SubResource("RectangleShape2D_opdy1")
 
-[node name="Crab2" type="CharacterBody2D" parent="." unique_id=1372831032]
-collision_mask = 0
-script = ExtResource("4_5bie0")
+[node name="Crab2" type="StaticBody2D" parent="." unique_id=1406639135]
+script = ExtResource("7_mxdcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crab2" unique_id=757706460]
 z_index = 1
@@ -102,9 +102,8 @@ shape = SubResource("RectangleShape2D_dvlgu")
 position = Vector2(300, 193)
 shape = SubResource("RectangleShape2D_5bie0")
 
-[node name="Crab3" type="CharacterBody2D" parent="." unique_id=1199286833]
-collision_mask = 0
-script = ExtResource("5_nuv42")
+[node name="Crab3" type="StaticBody2D" parent="." unique_id=1360978461]
+script = ExtResource("7_mxdcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crab3" unique_id=452608864]
 z_index = 1
@@ -116,9 +115,8 @@ texture = ExtResource("8_lekfx")
 position = Vector2(490.5, 380.5)
 shape = SubResource("RectangleShape2D_v0063")
 
-[node name="Crab4" type="CharacterBody2D" parent="." unique_id=878181529]
-collision_mask = 0
-script = ExtResource("6_25bc8")
+[node name="Crab4" type="StaticBody2D" parent="." unique_id=2120819730]
+script = ExtResource("7_mxdcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crab4" unique_id=1405393783]
 z_index = 1
@@ -130,9 +128,8 @@ texture = ExtResource("8_lekfx")
 position = Vector2(645, 301.5)
 shape = SubResource("RectangleShape2D_ddu4j")
 
-[node name="Crab5" type="CharacterBody2D" parent="." unique_id=1068605167]
-collision_mask = 0
-script = ExtResource("7_jilma")
+[node name="Crab5" type="StaticBody2D" parent="." unique_id=265916133]
+script = ExtResource("7_mxdcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crab5" unique_id=8242046]
 z_index = 1
@@ -182,5 +179,11 @@ shape = SubResource("RectangleShape2D_nkitg")
 position = Vector2(677, 304)
 texture = ExtResource("8_lekfx")
 >>>>>>> Stashed changes
+
+[node name="KillFloor" type="StaticBody2D" parent="." unique_id=441958480]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillFloor" unique_id=297490874]
+position = Vector2(743, 599)
+shape = SubResource("RectangleShape2D_6t6wp")
 
 [connection signal="body_entered" from="Crab2/Area2D" to="." method="_on_area_2d_body_entered"]
