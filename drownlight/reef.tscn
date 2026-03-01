@@ -4,22 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://j3ywindylyy8" path="res://reef.png" id="2_62aj3"]
 [ext_resource type="Texture2D" uid="uid://buiro0q8wee4u" path="res://swimming.png" id="3_dm17u"]
 [ext_resource type="Script" uid="uid://dfbnb6nou3nde" path="res://canvas_layer.gd" id="3_k4f1h"]
-<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://dasmnn55oqgst" path="res://player_reef.gd" id="3_mxdcl"]
 [ext_resource type="Script" uid="uid://dy1ol5khtdda7" path="res://task_object.gd" id="4_dm17u"]
 [ext_resource type="Script" uid="uid://dftqc4b81uo8" path="res://crab.gd" id="7_mxdcl"]
 [ext_resource type="Texture2D" uid="uid://bamf5d4eyljpo" path="res://crab.png" id="8_lekfx"]
-<<<<<<< HEAD
-[ext_resource type="Script" uid="uid://bbdwel8inldi1" path="res://goal.gd" id="15_ck4d3"]
-=======
-[ext_resource type="Script" path="res://player_reef.gd" id="3_mxdcl"]
-[ext_resource type="Script" uid="uid://dy1ol5khtdda7" path="res://task_object.gd" id="4_dm17u"]
-[ext_resource type="Script" path="res://crab.gd" id="7_mxdcl"]
-[ext_resource type="Texture2D" uid="uid://bamf5d4eyljpo" path="res://Untitled20_20260228174406-removebg-preview.png" id="8_lekfx"]
->>>>>>> Stashed changes
-=======
 [ext_resource type="Script" path="res://goal.gd" id="15_ck4d3"]
->>>>>>> 27012638b63c8773b2598dd057a7c82a0a6fd4b0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdcl"]
 size = Vector2(324, 107.5)
@@ -179,15 +168,9 @@ shape = SubResource("RectangleShape2D_lekfx")
 position = Vector2(139, 160)
 script = ExtResource("15_ck4d3")
 
-<<<<<<< Updated upstream
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goal" unique_id=439149250]
 position = Vector2(1403, 161)
 shape = SubResource("RectangleShape2D_nkitg")
-=======
-[node name="Sprite2D" type="Sprite2D" parent="Crab" unique_id=852482923]
-position = Vector2(677, 304)
-texture = ExtResource("8_lekfx")
->>>>>>> Stashed changes
 
 [node name="KillFloor" type="StaticBody2D" parent="." unique_id=441958480]
 
