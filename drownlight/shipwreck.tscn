@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://hhkx31lirlbe"]
 
+[ext_resource type="Texture2D" uid="uid://d4eunlegxi6ah" path="res://shipwreck.png" id="1_7u8x6"]
+
 [node name="shipwreck" type="Node2D" unique_id=160331748]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=720812742]
+position = Vector2(1491, 805)
+scale = Vector2(2.5746527, 2.4598765)
+texture = ExtResource("1_7u8x6")

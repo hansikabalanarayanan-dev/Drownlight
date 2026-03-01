@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://coaov8o8vwvk1"]
+[gd_scene format=3 uid="uid://bh383snh6u64l"]
 
 [ext_resource type="Script" uid="uid://caxeprcm1tkd7" path="res://reef.gd" id="1_ph0f1"]
 [ext_resource type="Texture2D" uid="uid://j3ywindylyy8" path="res://reef.png" id="2_62aj3"]
@@ -15,17 +15,25 @@
 [ext_resource type="Script" uid="uid://bbdwel8inldi1" path="res://goal.gd" id="15_ck4d3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opdy1"]
-size = Vector2(40, 658)
+size = Vector2(124, 97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvlgu"]
+size = Vector2(152, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bie0"]
+size = Vector2(120, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0063"]
+size = Vector2(151, 97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddu4j"]
+size = Vector2(116, 91)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25a28"]
+size = Vector2(152, 114)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdcl"]
+size = Vector2(324, 107.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lekfx"]
 
@@ -35,8 +43,9 @@ size = Vector2(103.75, 638.25)
 [node name="reef" type="Node2D" unique_id=1047524276]
 script = ExtResource("1_ph0f1")
 
-[node name="Crab" type="CharacterBody2D" parent="." unique_id=1811391821]
+[node name="Crab" type="CharacterBody2D" parent="." unique_id=1811391821 groups=["crabs"]]
 z_index = 1
+collision_mask = 0
 script = ExtResource("7_mxdcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crab" unique_id=659116209]
@@ -45,10 +54,11 @@ scale = Vector2(0.5579999, 0.434)
 texture = ExtResource("8_lekfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab" unique_id=1785700215]
-position = Vector2(-147, 322)
+position = Vector2(1031, 288.5)
 shape = SubResource("RectangleShape2D_opdy1")
 
-[node name="Crab2" type="CharacterBody2D" parent="." unique_id=1372831032]
+[node name="Crab2" type="CharacterBody2D" parent="." unique_id=1372831032 groups=["crabs"]]
+collision_mask = 0
 script = ExtResource("4_5bie0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crab2" unique_id=757706460]
@@ -58,9 +68,17 @@ scale = Vector2(0.448, 0.32)
 texture = ExtResource("8_lekfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab2" unique_id=1159039799]
+position = Vector2(300, 190)
 shape = SubResource("RectangleShape2D_dvlgu")
 
-[node name="Crab3" type="CharacterBody2D" parent="." unique_id=1199286833]
+[node name="Area2D" type="Area2D" parent="Crab2" unique_id=803179374]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crab2/Area2D" unique_id=454475139]
+position = Vector2(300, 193)
+shape = SubResource("RectangleShape2D_5bie0")
+
+[node name="Crab3" type="CharacterBody2D" parent="." unique_id=1199286833 groups=["crabs"]]
+collision_mask = 0
 script = ExtResource("5_nuv42")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crab3" unique_id=452608864]
@@ -70,9 +88,11 @@ scale = Vector2(0.5200001, 0.40399995)
 texture = ExtResource("8_lekfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab3" unique_id=1956864418]
+position = Vector2(490.5, 380.5)
 shape = SubResource("RectangleShape2D_v0063")
 
-[node name="Crab4" type="CharacterBody2D" parent="." unique_id=878181529]
+[node name="Crab4" type="CharacterBody2D" parent="." unique_id=878181529 groups=["crabs"]]
+collision_mask = 0
 script = ExtResource("6_25bc8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crab4" unique_id=1405393783]
@@ -82,9 +102,11 @@ scale = Vector2(0.368, 0.338)
 texture = ExtResource("8_lekfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab4" unique_id=1051229567]
+position = Vector2(645, 301.5)
 shape = SubResource("RectangleShape2D_ddu4j")
 
-[node name="Crab5" type="CharacterBody2D" parent="." unique_id=1068605167]
+[node name="Crab5" type="CharacterBody2D" parent="." unique_id=1068605167 groups=["crabs"]]
+collision_mask = 0
 script = ExtResource("7_jilma")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crab5" unique_id=8242046]
@@ -94,22 +116,25 @@ scale = Vector2(0.41000012, 0.35999998)
 texture = ExtResource("8_lekfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab5" unique_id=2041517723]
+position = Vector2(803, 403)
 shape = SubResource("RectangleShape2D_25a28")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=129923289]
-position = Vector2(588, 327)
+position = Vector2(743, 324)
 scale = Vector2(1.289, 1)
 texture = ExtResource("2_62aj3")
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=1795128770]
+[node name="player" type="CharacterBody2D" parent="." unique_id=1795128770 groups=["player"]]
+collision_mask = 0
 script = ExtResource("3_mxdcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1119176396]
-position = Vector2(2.0000005, 433.00003)
-scale = Vector2(1.3355623, 1.0185626)
+position = Vector2(-62, 431)
+scale = Vector2(1.1648906, 0.83164066)
 texture = ExtResource("3_dm17u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=115669558]
+position = Vector2(-66, 360)
 shape = SubResource("RectangleShape2D_mxdcl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1014914976]
@@ -119,10 +144,10 @@ script = ExtResource("3_k4f1h")
 custom_minimum_size = Vector2(0, 40)
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 14.0
-offset_top = -4.0
-offset_right = 16.0
-offset_bottom = 80.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 8.0
+offset_bottom = 90.0
 grow_horizontal = 2
 step = 5.0
 value = 100.0
@@ -138,8 +163,11 @@ shape = SubResource("RectangleShape2D_lekfx")
 [node name="Sprite2D" type="Sprite2D" parent="TaskObject" unique_id=1825071594]
 
 [node name="goal" type="Area2D" parent="." unique_id=1633016409]
+position = Vector2(139, 160)
 script = ExtResource("15_ck4d3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goal" unique_id=439149250]
-position = Vector2(1264.875, 318.875)
+position = Vector2(1403, 161)
 shape = SubResource("RectangleShape2D_nkitg")
+
+[connection signal="body_entered" from="Crab2/Area2D" to="." method="_on_area_2d_body_entered"]
