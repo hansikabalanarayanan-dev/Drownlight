@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://hhkx31lirlbe"]
+[gd_scene format=3 uid="uid://pxmmubuxscin"]
 
 [ext_resource type="Texture2D" uid="uid://d4eunlegxi6ah" path="res://shipwreck.png" id="1_7u8x6"]
 [ext_resource type="Script" uid="uid://dlknptulddg4s" path="res://shipwreck.gd" id="1_c4xt8"]
@@ -22,7 +22,7 @@ size = Vector2(95, 122)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_roxkn"]
 size = Vector2(101, 90)
 
-[node name="shipwreck" type="Node2D" unique_id=160331748]
+[node name="shipwreck" type="Node2D" unique_id=160331748 groups=["gold"]]
 script = ExtResource("1_c4xt8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=720812742]
@@ -42,7 +42,7 @@ texture = ExtResource("4_u00hf")
 position = Vector2(139.5, 308.5)
 shape = SubResource("RectangleShape2D_x8u84")
 
-[node name="Treasure1" type="Area2D" parent="." unique_id=609227685 groups=["treasure"]]
+[node name="Treasure1" type="Area2D" parent="." unique_id=609227685 groups=["gold"]]
 script = ExtResource("5_r8tmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="Treasure1" unique_id=670257587]
@@ -58,35 +58,43 @@ shape = SubResource("RectangleShape2D_m22ke")
 script = ExtResource("7_imu41")
 
 [node name="Sprite2D" type="Sprite2D" parent="Treasure2" unique_id=1101206063]
-position = Vector2(996, 396)
+position = Vector2(840.00006, 362.99997)
 scale = Vector2(0.27, 0.28)
 texture = ExtResource("6_6ffyc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure2" unique_id=934712083]
-position = Vector2(988.5, 379)
+position = Vector2(832, 353)
 shape = SubResource("RectangleShape2D_mrtcl")
 
 [node name="Treasure3" type="Area2D" parent="." unique_id=1653758291 groups=["treasure"]]
 script = ExtResource("8_igrqy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Treasure3" unique_id=883040299]
-position = Vector2(910, 566)
+position = Vector2(745.00006, 477)
 scale = Vector2(0.20300002, 0.20499998)
 texture = ExtResource("6_6ffyc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure3" unique_id=1568719811]
-position = Vector2(905.5, 558)
+position = Vector2(735, 472)
 shape = SubResource("RectangleShape2D_roxkn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=416284299]
 script = ExtResource("9_scn7r")
 
 [node name="oxygenbar" type="ProgressBar" parent="CanvasLayer" unique_id=413717829]
-offset_right = 934.0
+offset_right = 1152.0
 offset_bottom = 93.0
 step = 5.0
 fill_mode = 1
 
+[node name="Fade" type="ColorRect" parent="." unique_id=1216599862]
+offset_right = 1153.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 0)
+
 [connection signal="body_entered" from="Treasure1" to="player" method="_on_treasure_1_body_entered"]
+[connection signal="body_entered" from="Treasure1" to="Treasure1" method="_on_body_entered"]
 [connection signal="body_entered" from="Treasure2" to="player" method="_on_treasure_2_body_entered"]
+[connection signal="body_entered" from="Treasure2" to="Treasure2" method="_on_body_entered"]
+[connection signal="body_entered" from="Treasure3" to="." method="_on_treasure_3_body_entered"]
 [connection signal="body_entered" from="Treasure3" to="player" method="_on_treasure_3_body_entered"]
