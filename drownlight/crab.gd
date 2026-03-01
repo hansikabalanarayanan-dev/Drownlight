@@ -1,21 +1,17 @@
-extends CharacterBody2D
+extends StaticBody2D
 
-@export var speed = 130
-@export var move_distance = 150
 var start_position
-var direction = 1
-var player = null
+var speed
+var move_distance
+var direction
 
 func _ready():
 	start_position = global_position
-	await get_tree().process_frame
-	player = get_tree().get_first_node_in_group("player")
+	speed = randf_range(80, 200)
+	move_distance = randf_range(80, 220)
+	direction = 1 if randi() % 2 == 0 else -1
 
-func _physics_process(delta):
-	global_position.x += speed * direction * delta
-	if abs(global_position.x - start_position.x) > move_distance:
+func _process(delta):
+	global_position.y += speed * direction * delta
+	if abs(global_position.y - start_position.y) > move_distance:
 		direction *= -1
-	if player and not player.dead:
-		var dist = global_position.distance_to(player.global_position)
-		if dist < 60:
-			player.die()
