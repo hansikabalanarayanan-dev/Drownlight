@@ -1,3 +1,71 @@
 [gd_scene format=3 uid="uid://b4t40use5twb2"]
 
+[ext_resource type="Script" uid="uid://ccwkp7nnswua2" path="res://deeptrench.gd" id="1_12xhh"]
+[ext_resource type="Texture2D" uid="uid://dctdns0mx6t2l" path="res://deeptrench.png" id="1_rv1f8"]
+[ext_resource type="Script" uid="uid://dbedmkrw8a8ek" path="res://kraken.gd" id="2_eyd2c"]
+[ext_resource type="Script" uid="uid://bxk0q0v7wnau2" path="res://player.gd" id="3_kvt5l"]
+[ext_resource type="Texture2D" uid="uid://clavxq70bjlta" path="res://kraken.png" id="4_ac7jq"]
+[ext_resource type="Texture2D" uid="uid://buiro0q8wee4u" path="res://swimming.png" id="5_5o732"]
+[ext_resource type="Script" uid="uid://dfbnb6nou3nde" path="res://canvas_layer.gd" id="7_q1yhv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvt5l"]
+size = Vector2(228, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12xhh"]
+
 [node name="deeptrench" type="Node2D" unique_id=1732461315]
+script = ExtResource("1_12xhh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=905625290]
+position = Vector2(579.00006, 321)
+scale = Vector2(0.48855928, 0.3902439)
+texture = ExtResource("1_rv1f8")
+
+[node name="kraken" type="Node2D" parent="." unique_id=1263238572]
+script = ExtResource("2_eyd2c")
+
+[node name="Sprite2D" type="Sprite2D" parent="kraken" unique_id=250493179]
+position = Vector2(959, 350)
+texture = ExtResource("4_ac7jq")
+
+[node name="AttackTimer" type="Timer" parent="kraken" unique_id=1415056666]
+wait_time = 2.0
+autostart = true
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1573137900 groups=["player"]]
+script = ExtResource("3_kvt5l")
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=560651701]
+position = Vector2(166.99998, 375)
+scale = Vector2(0.898, 0.84000003)
+texture = ExtResource("5_5o732")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1269474432]
+position = Vector2(171, 307)
+shape = SubResource("RectangleShape2D_kvt5l")
+
+[node name="DeathDetector" type="Area2D" parent="player" unique_id=1488921898]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/DeathDetector" unique_id=819898109]
+shape = SubResource("RectangleShape2D_12xhh")
+
+[node name="tentacles" type="Node2D" parent="." unique_id=1191465121 groups=["tentacle"]]
+
+[node name="relic" type="Sprite2D" parent="." unique_id=537366406]
+
+[node name="SurvivalTimer" type="Timer" parent="." unique_id=193572983]
+wait_time = 45.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1739847849]
+script = ExtResource("7_q1yhv")
+
+[node name="oxygenbar" type="ProgressBar" parent="CanvasLayer" unique_id=1533413503]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[connection signal="timeout" from="kraken/AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="body_entered" from="player/DeathDetector" to="." method="_on_death_detector_body_entered"]
+[connection signal="body_entered" from="player/DeathDetector" to="kraken" method="_on_death_detector_body_entered"]
+[connection signal="timeout" from="SurvivalTimer" to="." method="_on_survival_timer_timeout"]

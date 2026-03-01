@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b4l3byl14x3lk"]
+
+[ext_resource type="Script" uid="uid://bmrjwwneoyfdj" path="res://tentacle.gd" id="1_u74vr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cyt7"]
+
+[node name="Tentacle" type="Area2D" unique_id=432266912]
+script = ExtResource("1_u74vr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2083219895]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=743991734]
+shape = SubResource("RectangleShape2D_2cyt7")

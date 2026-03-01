@@ -19,7 +19,7 @@ func level_complete():
 	fade_out()
 	
 func rumble_screen():
-	for i in 20:
+	for i in range (20):
 		position = Vector2(randf_range(-10,10), randf_range(-10,10))
 		await get_tree().create_timer(0.03).timeout
 	
@@ -31,8 +31,13 @@ func fade_out():
 	for i in range(20):
 		fade.modulate.a += 0.05
 		await get_tree().create_timer(0.05).timeout
-		get_tree().change_scene_to_file("res://deeptrench.tscn")
+	
+	get_tree().change_scene_to_file("res://deeptrench.tscn")
 
 
 func _on_treasure_3_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_treasure_1_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.

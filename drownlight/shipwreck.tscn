@@ -92,6 +92,7 @@ offset_right = 1153.0
 offset_bottom = 647.0
 color = Color(0, 0, 0, 0)
 
+[connection signal="body_entered" from="Treasure1" to="." method="_on_treasure_1_body_entered"]
 [connection signal="body_entered" from="Treasure1" to="player" method="_on_treasure_1_body_entered"]
 [connection signal="body_entered" from="Treasure1" to="Treasure1" method="_on_body_entered"]
 [connection signal="body_entered" from="Treasure2" to="player" method="_on_treasure_2_body_entered"]

@@ -1,16 +1,14 @@
 extends CharacterBody2D
 
 @export var speed = 200
-@export var oxygen = 100.0
-var start_position
+@export var max_health = 100.0
+var health = 100.0
 var dead = false
-var invincible = true
+
+signal health_changed(new_health, max_health)
 
 func _ready():
-	start_position = global_position
 	add_to_group("player")
-	await get_tree().create_timer(2.0).timeout
-	invincible = false
 
 func _physics_process(delta):
 	if dead:
@@ -24,15 +22,21 @@ func _physics_process(delta):
 	if global_position.x >= get_viewport_rect().size.x:
 		get_tree().change_scene_to_file("res://shipwreck.tscn")
 
-func _process(delta):
+func take_damage(amount: float):
 	if dead:
 		return
-	oxygen -= delta * 5
-	if oxygen <= 0:
+	health -= amount
+	health = max(health, 0.0)
+	emit_signal("health_changed", health, max_health)
+	if health <= 0:
 		die()
 
 func die():
-	if dead or invincible:
+	if dead:
 		return
 	dead = true
 	get_tree().reload_current_scene()
+
+func _on_death_detector_body_entered(body: Node2D) -> void:
+	if body.is_in_group("tentacle"):
+		take_damage(25.0)
