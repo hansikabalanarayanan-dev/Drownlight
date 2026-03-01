@@ -36,3 +36,7 @@ func die():
 		return
 	dead = true
 	get_tree().reload_current_scene()
+
+
+func _on_death_detector_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

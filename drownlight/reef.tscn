@@ -13,6 +13,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdcl"]
 size = Vector2(324, 107.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nuv42"]
+size = Vector2(338.5, 82.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opdy1"]
 size = Vector2(124, 97)
 
@@ -58,6 +61,12 @@ texture = ExtResource("3_dm17u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=115669558]
 position = Vector2(171, 407)
 shape = SubResource("RectangleShape2D_mxdcl")
+
+[node name="DeathDetector" type="Area2D" parent="player" unique_id=572755168]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/DeathDetector" unique_id=1939119310]
+position = Vector2(168.75, 403.25)
+shape = SubResource("RectangleShape2D_nuv42")
 
 [node name="Crab" type="StaticBody2D" parent="." unique_id=1443256300]
 z_index = 1
@@ -166,7 +175,8 @@ shape = SubResource("RectangleShape2D_nkitg")
 [node name="KillFloor" type="StaticBody2D" parent="." unique_id=441958480]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillFloor" unique_id=297490874]
-position = Vector2(743, 599)
+position = Vector2(743, 620)
 shape = SubResource("RectangleShape2D_6t6wp")
 
+[connection signal="body_entered" from="player/DeathDetector" to="player" method="_on_death_detector_body_entered"]
 [connection signal="body_entered" from="Crab2/Area2D" to="." method="_on_area_2d_body_entered"]
