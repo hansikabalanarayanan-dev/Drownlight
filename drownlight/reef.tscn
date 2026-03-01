@@ -20,6 +20,8 @@ size = Vector2(324, 107.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opdy1"]
 size = Vector2(124, 97)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5bie0"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvlgu"]
 size = Vector2(152, 90)
 
@@ -74,6 +76,11 @@ texture = ExtResource("8_lekfx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab" unique_id=1785700215]
 position = Vector2(791, 403)
 shape = SubResource("RectangleShape2D_opdy1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Crab" unique_id=604154470]
+position = Vector2(802.5, 398.5)
+scale = Vector2(0.5579999, 0.434)
+shape = SubResource("CircleShape2D_5bie0")
 
 [node name="Crab2" type="CharacterBody2D" parent="." unique_id=1372831032]
 collision_mask = 0
