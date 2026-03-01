@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="drownlight"
-run/main_scene="uid://dmjw3qkl3xrru"
+run/main_scene="uid://coaov8o8vwvk1"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
