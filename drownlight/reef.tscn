@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bamf5d4eyljpo" path="res://crab.png" id="8_lekfx"]
 [ext_resource type="Script" uid="uid://bbdwel8inldi1" path="res://goal.gd" id="15_ck4d3"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdcl"]
+size = Vector2(324, 107.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opdy1"]
 size = Vector2(124, 97)
 
@@ -32,9 +35,6 @@ size = Vector2(116, 91)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25a28"]
 size = Vector2(152, 114)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdcl"]
-size = Vector2(324, 107.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lekfx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkitg"]
@@ -43,7 +43,25 @@ size = Vector2(103.75, 638.25)
 [node name="reef" type="Node2D" unique_id=1047524276]
 script = ExtResource("1_ph0f1")
 
-[node name="Crab" type="CharacterBody2D" parent="." unique_id=1811391821 groups=["crabs"]]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=129923289]
+position = Vector2(743, 324)
+scale = Vector2(1.289, 1)
+texture = ExtResource("2_62aj3")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1795128770 groups=["player"]]
+collision_mask = 0
+script = ExtResource("3_mxdcl")
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1119176396]
+position = Vector2(157, 480)
+scale = Vector2(1.1648906, 0.83164066)
+texture = ExtResource("3_dm17u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=115669558]
+position = Vector2(171, 407)
+shape = SubResource("RectangleShape2D_mxdcl")
+
+[node name="Crab" type="CharacterBody2D" parent="." unique_id=1811391821]
 z_index = 1
 collision_mask = 0
 script = ExtResource("7_mxdcl")
@@ -54,10 +72,10 @@ scale = Vector2(0.5579999, 0.434)
 texture = ExtResource("8_lekfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab" unique_id=1785700215]
-position = Vector2(1031, 288.5)
+position = Vector2(791, 403)
 shape = SubResource("RectangleShape2D_opdy1")
 
-[node name="Crab2" type="CharacterBody2D" parent="." unique_id=1372831032 groups=["crabs"]]
+[node name="Crab2" type="CharacterBody2D" parent="." unique_id=1372831032]
 collision_mask = 0
 script = ExtResource("4_5bie0")
 
@@ -77,7 +95,7 @@ shape = SubResource("RectangleShape2D_dvlgu")
 position = Vector2(300, 193)
 shape = SubResource("RectangleShape2D_5bie0")
 
-[node name="Crab3" type="CharacterBody2D" parent="." unique_id=1199286833 groups=["crabs"]]
+[node name="Crab3" type="CharacterBody2D" parent="." unique_id=1199286833]
 collision_mask = 0
 script = ExtResource("5_nuv42")
 
@@ -91,7 +109,7 @@ texture = ExtResource("8_lekfx")
 position = Vector2(490.5, 380.5)
 shape = SubResource("RectangleShape2D_v0063")
 
-[node name="Crab4" type="CharacterBody2D" parent="." unique_id=878181529 groups=["crabs"]]
+[node name="Crab4" type="CharacterBody2D" parent="." unique_id=878181529]
 collision_mask = 0
 script = ExtResource("6_25bc8")
 
@@ -105,37 +123,19 @@ texture = ExtResource("8_lekfx")
 position = Vector2(645, 301.5)
 shape = SubResource("RectangleShape2D_ddu4j")
 
-[node name="Crab5" type="CharacterBody2D" parent="." unique_id=1068605167 groups=["crabs"]]
+[node name="Crab5" type="CharacterBody2D" parent="." unique_id=1068605167]
 collision_mask = 0
 script = ExtResource("7_jilma")
 
 [node name="Sprite2D" type="Sprite2D" parent="Crab5" unique_id=8242046]
 z_index = 1
-position = Vector2(1033.5, 286)
+position = Vector2(1042, 276)
 scale = Vector2(0.41000012, 0.35999998)
 texture = ExtResource("8_lekfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab5" unique_id=2041517723]
-position = Vector2(803, 403)
+position = Vector2(1042, 280)
 shape = SubResource("RectangleShape2D_25a28")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=129923289]
-position = Vector2(743, 324)
-scale = Vector2(1.289, 1)
-texture = ExtResource("2_62aj3")
-
-[node name="player" type="CharacterBody2D" parent="." unique_id=1795128770 groups=["player"]]
-collision_mask = 0
-script = ExtResource("3_mxdcl")
-
-[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1119176396]
-position = Vector2(-62, 431)
-scale = Vector2(1.1648906, 0.83164066)
-texture = ExtResource("3_dm17u")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=115669558]
-position = Vector2(-66, 360)
-shape = SubResource("RectangleShape2D_mxdcl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1014914976]
 script = ExtResource("3_k4f1h")

@@ -1,0 +1,10 @@
+extends Area2D
+
+func _on_body_entered(body):
+	print("something touched treasure: ", body.name)
+	if body.is_in_group("player"):
+		queue_free()
+		get_tree().call_group("shipwreck", "check_treasure")
+
+	
+	

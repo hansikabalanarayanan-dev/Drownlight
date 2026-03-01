@@ -1,10 +1,92 @@
 [gd_scene format=3 uid="uid://hhkx31lirlbe"]
 
 [ext_resource type="Texture2D" uid="uid://d4eunlegxi6ah" path="res://shipwreck.png" id="1_7u8x6"]
+[ext_resource type="Script" uid="uid://dlknptulddg4s" path="res://shipwreck.gd" id="1_c4xt8"]
+[ext_resource type="Script" uid="uid://bxk0q0v7wnau2" path="res://player.gd" id="3_7xy0e"]
+[ext_resource type="Texture2D" uid="uid://buiro0q8wee4u" path="res://swimming.png" id="4_u00hf"]
+[ext_resource type="Script" uid="uid://djpktch104bry" path="res://treasure_1.gd" id="5_r8tmv"]
+[ext_resource type="Texture2D" uid="uid://caoil1x8yfoni" path="res://treasure-removebg-preview.png" id="6_6ffyc"]
+[ext_resource type="Script" uid="uid://cqvjv8hayd8x1" path="res://treasure_2.gd" id="7_imu41"]
+[ext_resource type="Script" uid="uid://c3yo3xum672tu" path="res://treasure_3.gd" id="8_igrqy"]
+[ext_resource type="Script" uid="uid://dfbnb6nou3nde" path="res://canvas_layer.gd" id="9_scn7r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8u84"]
+size = Vector2(229, 99)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m22ke"]
+size = Vector2(104, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrtcl"]
+size = Vector2(95, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_roxkn"]
+size = Vector2(101, 90)
 
 [node name="shipwreck" type="Node2D" unique_id=160331748]
+script = ExtResource("1_c4xt8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=720812742]
-position = Vector2(1491, 805)
-scale = Vector2(2.5746527, 2.4598765)
+position = Vector2(575, 322)
+scale = Vector2(0.99999994, 1.0030864)
 texture = ExtResource("1_7u8x6")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1380504582 groups=["player"]]
+collision_mask = 0
+script = ExtResource("3_7xy0e")
+
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1171724175]
+position = Vector2(139, 402)
+texture = ExtResource("4_u00hf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=179092057]
+position = Vector2(139.5, 308.5)
+shape = SubResource("RectangleShape2D_x8u84")
+
+[node name="Treasure1" type="Area2D" parent="." unique_id=609227685 groups=["treasure"]]
+script = ExtResource("5_r8tmv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Treasure1" unique_id=670257587]
+position = Vector2(551.50006, 395.75)
+scale = Vector2(0.19400008, 0.17500001)
+texture = ExtResource("6_6ffyc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure1" unique_id=1378243087]
+position = Vector2(552, 389)
+shape = SubResource("RectangleShape2D_m22ke")
+
+[node name="Treasure2" type="Area2D" parent="." unique_id=241111544 groups=["treasure"]]
+script = ExtResource("7_imu41")
+
+[node name="Sprite2D" type="Sprite2D" parent="Treasure2" unique_id=1101206063]
+position = Vector2(996, 396)
+scale = Vector2(0.27, 0.28)
+texture = ExtResource("6_6ffyc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure2" unique_id=934712083]
+position = Vector2(988.5, 379)
+shape = SubResource("RectangleShape2D_mrtcl")
+
+[node name="Treasure3" type="Area2D" parent="." unique_id=1653758291 groups=["treasure"]]
+script = ExtResource("8_igrqy")
+
+[node name="Sprite2D" type="Sprite2D" parent="Treasure3" unique_id=883040299]
+position = Vector2(910, 566)
+scale = Vector2(0.20300002, 0.20499998)
+texture = ExtResource("6_6ffyc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Treasure3" unique_id=1568719811]
+position = Vector2(905.5, 558)
+shape = SubResource("RectangleShape2D_roxkn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=416284299]
+script = ExtResource("9_scn7r")
+
+[node name="oxygenbar" type="ProgressBar" parent="CanvasLayer" unique_id=413717829]
+offset_right = 934.0
+offset_bottom = 93.0
+step = 5.0
+fill_mode = 1
+
+[connection signal="body_entered" from="Treasure1" to="player" method="_on_treasure_1_body_entered"]
+[connection signal="body_entered" from="Treasure2" to="player" method="_on_treasure_2_body_entered"]
+[connection signal="body_entered" from="Treasure3" to="player" method="_on_treasure_3_body_entered"]
