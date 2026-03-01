@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://pxmmubuxscin"]
+[gd_scene format=3 uid="uid://hhkx31lirlbe"]
 
 [ext_resource type="Texture2D" uid="uid://d4eunlegxi6ah" path="res://shipwreck.png" id="1_7u8x6"]
 [ext_resource type="Script" uid="uid://dlknptulddg4s" path="res://shipwreck.gd" id="1_c4xt8"]
