@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://dy1ol5khtdda7" path="res://task_object.gd" id="4_dm17u"]
 [ext_resource type="Script" uid="uid://dftqc4b81uo8" path="res://crab.gd" id="7_mxdcl"]
 [ext_resource type="Texture2D" uid="uid://bamf5d4eyljpo" path="res://crab.png" id="8_lekfx"]
-[ext_resource type="Script" path="res://goal.gd" id="15_ck4d3"]
+[ext_resource type="Script" uid="uid://bbdwel8inldi1" path="res://goal.gd" id="15_ck4d3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdcl"]
 size = Vector2(324, 107.5)

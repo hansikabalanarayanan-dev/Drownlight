@@ -1,12 +1,14 @@
 extends CanvasLayer
 
-@onready var player = get_parent().get_node("player")
-@onready var oxygen_bar = $oxygenbar
+@onready var health_bar = $oxygenbar
 
 func _ready():
-	oxygen_bar.max_value = 100
-	oxygen_bar.value = 100
-
-func _process(delta):
+	var player = get_tree().get_first_node_in_group("player")
 	if player:
-		oxygen_bar.value = player.oxygen
+		player.health_changed.connect(_on_health_changed)
+		health_bar.max_value = player.max_health
+		health_bar.value = player.health
+
+func _on_health_changed(new_health, max_health):
+	health_bar.max_value = max_health
+	health_bar.value = new_health
