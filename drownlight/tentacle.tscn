@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://b4l3byl14x3lk"]
 
 [ext_resource type="Script" uid="uid://bmrjwwneoyfdj" path="res://tentacle.gd" id="1_u74vr"]
+[ext_resource type="Texture2D" uid="uid://ff5aa6nowum4" path="res://projectile-removebg-preview.png" id="2_htp85"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cyt7"]
+size = Vector2(205, 86)
 
 [node name="Tentacle" type="Area2D" unique_id=432266912]
 script = ExtResource("1_u74vr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2083219895]
+position = Vector2(671.25, 482)
+scale = Vector2(0.3523726, 0.21004567)
+texture = ExtResource("2_htp85")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=743991734]
+position = Vector2(670.5, 479)
 shape = SubResource("RectangleShape2D_2cyt7")
