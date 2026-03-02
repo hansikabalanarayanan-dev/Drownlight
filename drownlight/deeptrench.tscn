@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://csl7dojaf7kmp"]
+[gd_scene format=3 uid="uid://b4t40use5twb2"]
 
 [ext_resource type="Script" path="res://deeptrench.gd" id="1_12xhh"]
 [ext_resource type="Texture2D" uid="uid://dctdns0mx6t2l" path="res://deeptrench.png" id="1_rv1f8"]
@@ -69,6 +69,15 @@ offset_left = 4.0
 offset_top = 2.0
 offset_right = 1163.0
 offset_bottom = 51.0
+
+[node name="tobecontinued" type="Label" parent="CanvasLayer" unique_id=896663782]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "TO BE CONTINUED..."
 
 [connection signal="timeout" from="kraken/AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="body_entered" from="player/DeathDetector" to="." method="_on_death_detector_body_entered"]
