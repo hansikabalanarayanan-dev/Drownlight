@@ -1,10 +1,8 @@
 extends CharacterBody2D
-
 @export var speed = 200
 @export var max_health = 100.0
 var health = 100.0
 var dead = false
-
 signal health_changed(new_health, max_health)
 
 func _ready():
@@ -13,12 +11,20 @@ func _ready():
 func _physics_process(delta):
 	if dead:
 		return
+	
 	var dir = Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	)
 	velocity = dir.normalized() * speed
 	move_and_slide()
+	# Check if touching a crab
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider and collider.is_in_group("crab"):
+			die()
+			return
 	if global_position.x >= get_viewport_rect().size.x:
 		get_tree().change_scene_to_file("res://shipwreck.tscn")
 

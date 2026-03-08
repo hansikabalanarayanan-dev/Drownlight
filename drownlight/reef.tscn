@@ -11,28 +11,28 @@
 [ext_resource type="Script" uid="uid://bbdwel8inldi1" path="res://goal.gd" id="15_ck4d3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxdcl"]
-size = Vector2(324, 107.5)
+size = Vector2(266.5, 81.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuv42"]
-size = Vector2(338.5, 82.5)
+size = Vector2(260.25, 78.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opdy1"]
 size = Vector2(124, 97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvlgu"]
-size = Vector2(152, 90)
+size = Vector2(116, 73)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bie0"]
-size = Vector2(120, 80)
+size = Vector2(115, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0063"]
-size = Vector2(151, 97)
+size = Vector2(126, 87)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddu4j"]
-size = Vector2(116, 91)
+size = Vector2(95, 71)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25a28"]
-size = Vector2(152, 114)
+size = Vector2(98, 78)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lekfx"]
 
@@ -46,7 +46,7 @@ size = Vector2(1480, 121)
 script = ExtResource("1_ph0f1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=129923289]
-position = Vector2(743, 324)
+position = Vector2(745, 330)
 scale = Vector2(1.289, 1)
 texture = ExtResource("2_62aj3")
 
@@ -59,13 +59,13 @@ scale = Vector2(1.1648906, 0.83164066)
 texture = ExtResource("3_dm17u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=115669558]
-position = Vector2(171, 407)
+position = Vector2(163.75, 407.0625)
 shape = SubResource("RectangleShape2D_mxdcl")
 
 [node name="DeathDetector" type="Area2D" parent="player" unique_id=572755168]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/DeathDetector" unique_id=1939119310]
-position = Vector2(168.75, 403.25)
+position = Vector2(160.875, 407.875)
 shape = SubResource("RectangleShape2D_nuv42")
 
 [node name="Crab" type="StaticBody2D" parent="." unique_id=1443256300]
@@ -78,7 +78,7 @@ scale = Vector2(0.5579999, 0.434)
 texture = ExtResource("8_lekfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab" unique_id=1785700215]
-position = Vector2(791, 403)
+position = Vector2(798, 404)
 shape = SubResource("RectangleShape2D_opdy1")
 
 [node name="Crab2" type="StaticBody2D" parent="." unique_id=1406639135]
@@ -91,13 +91,13 @@ scale = Vector2(0.448, 0.32)
 texture = ExtResource("8_lekfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab2" unique_id=1159039799]
-position = Vector2(300, 190)
+position = Vector2(303, 191.5)
 shape = SubResource("RectangleShape2D_dvlgu")
 
 [node name="Area2D" type="Area2D" parent="Crab2" unique_id=803179374]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab2/Area2D" unique_id=454475139]
-position = Vector2(300, 193)
+position = Vector2(304.5, 192)
 shape = SubResource("RectangleShape2D_5bie0")
 
 [node name="Crab3" type="StaticBody2D" parent="." unique_id=1360978461]
@@ -110,7 +110,7 @@ scale = Vector2(0.5200001, 0.40399995)
 texture = ExtResource("8_lekfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab3" unique_id=1956864418]
-position = Vector2(490.5, 380.5)
+position = Vector2(494, 380.5)
 shape = SubResource("RectangleShape2D_v0063")
 
 [node name="Crab4" type="StaticBody2D" parent="." unique_id=2120819730]
@@ -123,7 +123,7 @@ scale = Vector2(0.368, 0.338)
 texture = ExtResource("8_lekfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab4" unique_id=1051229567]
-position = Vector2(645, 301.5)
+position = Vector2(644.5, 301.5)
 shape = SubResource("RectangleShape2D_ddu4j")
 
 [node name="Crab5" type="StaticBody2D" parent="." unique_id=265916133]
@@ -136,7 +136,7 @@ scale = Vector2(0.41000012, 0.35999998)
 texture = ExtResource("8_lekfx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Crab5" unique_id=2041517723]
-position = Vector2(1042, 280)
+position = Vector2(1039, 277)
 shape = SubResource("RectangleShape2D_25a28")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1014914976]
@@ -175,7 +175,7 @@ shape = SubResource("RectangleShape2D_nkitg")
 [node name="KillFloor" type="StaticBody2D" parent="." unique_id=441958480]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillFloor" unique_id=297490874]
-position = Vector2(743, 620)
+position = Vector2(755, 706)
 shape = SubResource("RectangleShape2D_6t6wp")
 
 [connection signal="body_entered" from="player/DeathDetector" to="player" method="_on_death_detector_body_entered"]

@@ -1,5 +1,4 @@
 extends StaticBody2D
-
 var start_position
 var speed
 var move_distance
@@ -7,9 +6,10 @@ var direction
 
 func _ready():
 	start_position = global_position
-	speed = randf_range(80, 200)
+	speed = randf_range(40, 100)
 	move_distance = randf_range(80, 220)
 	direction = 1 if randi() % 2 == 0 else -1
+	add_to_group("crab")
 
 func _process(delta):
 	global_position.y += speed * direction * delta

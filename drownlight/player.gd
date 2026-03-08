@@ -19,8 +19,9 @@ func _physics_process(_delta):
 
 	for i in range(get_slide_collision_count()):
 		var collider = get_slide_collision(i).get_collider()
-		if collider and collider.name == "KillFloor":
-			die()
+		if collider and collider.is_in_group("gold"):
+			get_parent().gold_collected()
+			collider.queue_free()
 
 func take_damage(amount: float):
 	if dead:
@@ -35,7 +36,7 @@ func die():
 	if dead:
 		return
 	dead = true
-	get_tree().change_scene_to_file("res://game_over_scene.tscn")  # or reload_current_scene()
+	get_tree().reload_current_scene()
 
 func _on_DeathD_body_entered(body):
 	if body.is_in_group("tentacle"):
